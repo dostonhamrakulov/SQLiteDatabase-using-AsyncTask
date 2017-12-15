@@ -43,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, Inserting.class));
         Toast.makeText(MainActivity.this, "Moving to Insert activity", Toast.LENGTH_LONG).show();
     }
+    public void MoveView(View view){
+        startActivity(new Intent(MainActivity.this, Displaying.class));
+        Toast.makeText(MainActivity.this, "Moving to View activity", Toast.LENGTH_LONG).show();
+    }
 }

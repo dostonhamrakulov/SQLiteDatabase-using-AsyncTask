@@ -2,6 +2,7 @@ package com.idoston.adaptivesystem;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -60,5 +61,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_8, continent);
         db.insert(TABLE_NAME, null, contentValues);
 
+    }
+
+    public Cursor getAllData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
+
+        return res;
     }
 }

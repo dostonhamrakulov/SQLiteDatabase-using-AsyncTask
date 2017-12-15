@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Search apartment"
+            android:onClick="MoveView"
             android:id="@+id/btn_moveSearch"
             android:textAllCaps="false"
             android:layout_marginTop="20dp"/>

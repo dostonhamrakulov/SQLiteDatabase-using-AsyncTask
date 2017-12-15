@@ -19,6 +19,9 @@ public class Inserting extends AppCompatActivity {
 
         myDatabaseHelper =  new MyDatabaseHelper(this);
 
+
+
+
         name1 = (EditText)findViewById(R.id.edit_name);
         ranking1 = (EditText)findViewById(R.id.edit_ranking);
         fee1 = (EditText)findViewById(R.id.edit_tuition_fee);
@@ -29,17 +32,28 @@ public class Inserting extends AppCompatActivity {
 
         insert = (Button)findViewById(R.id.btn_insert);
 
-        insert.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        myDatabaseHelper.insertData(name1.getText().toString(), ranking1.getText().toString(),
-                                fee1.getText().toString(), program1.getText().toString(), city1.getText().toString(),
-                                country1.getText().toString(), continent1.getText().toString());
 
-                        Toast.makeText(Inserting.this, "New data inserted!", Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
+
+//        insert.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//
+//                    }
+//                }
+//        );
+    }
+    public void AddData(View view){
+//        myDatabaseHelper.insertData(name1.getText().toString(), ranking1.getText().toString(),
+//                fee1.getText().toString(), program1.getText().toString(), city1.getText().toString(),
+//                country1.getText().toString(), continent1.getText().toString());
+
+        BackgroundTask backgroundTask= new BackgroundTask(this);
+        backgroundTask.execute("add_info", name1.getText().toString(), ranking1.getText().toString(),
+                fee1.getText().toString(), program1.getText().toString(), city1.getText().toString(),
+                country1.getText().toString(), continent1.getText().toString());
+        finish();
+
+        Toast.makeText(Inserting.this, "New data inserted!", Toast.LENGTH_LONG).show();
     }
 }
