@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MoveInsert(View view){
+        startActivity(new Intent(MainActivity.this, Inserting.class));
         Toast.makeText(MainActivity.this, "Moving to Insert activity", Toast.LENGTH_LONG).show();
     }
 }
