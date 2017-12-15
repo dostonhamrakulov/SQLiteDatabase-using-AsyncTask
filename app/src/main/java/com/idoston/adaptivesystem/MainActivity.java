@@ -47,4 +47,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, Displaying.class));
         Toast.makeText(MainActivity.this, "Moving to View activity", Toast.LENGTH_LONG).show();
     }
+    public void MoveAdaptive(View view){
+        startActivity(new Intent(MainActivity.this, Adaptive.class));
+        Toast.makeText(MainActivity.this, "Moving to Adaptive system!!", Toast.LENGTH_LONG).show();
+    }
 }

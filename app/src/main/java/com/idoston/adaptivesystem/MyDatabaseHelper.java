@@ -62,6 +62,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, contentValues);
 
     }
+    public Cursor getInformation(SQLiteDatabase sqLiteDatabase){
+
+        String[] projections = {COL_1, COL_2, COL_3, COL_4, COL_5, COL_6, COL_7, COL_8};
+        Cursor cursor =  sqLiteDatabase.query(TABLE_NAME, projections, null, null, null, null, null);
+
+        return cursor;
+    }
 
     public Cursor getAllData(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
