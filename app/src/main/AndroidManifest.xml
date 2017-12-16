@@ -9,14 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity_0"
+            android:label="AUS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Inserting"
+        <activity android:name=".MainActivity"
+            android:label="AUS"
+            android:parentActivityName=".MainActivity_0">
+            <intent-filter>
+                <action android:name="com.idoston.adaptivesystem.MainActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Inserting"
             android:label="New University"
             android:parentActivityName=".MainActivity">
             <intent-filter>
@@ -25,16 +36,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Displaying"
+        <activity
+            android:name=".Displaying"
             android:label="All universities"
             android:parentActivityName=".MainActivity">
-        <intent-filter>
-            <action android:name="com.idoston.adaptivesystem.Displaying" />
+            <intent-filter>
+                <action android:name="com.idoston.adaptivesystem.Displaying" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Adaptive"
+        <activity
+            android:name=".Adaptive"
             android:label="Adaptation"
             android:parentActivityName=".MainActivity">
             <intent-filter>
@@ -43,7 +56,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Adaptive_display"
+        <activity
+            android:name=".Adaptive_display"
             android:label="Result section"
             android:parentActivityName=".MainActivity">
             <intent-filter>
@@ -52,6 +66,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

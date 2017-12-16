@@ -3,6 +3,7 @@
     <string name="insert_text">Oops, you can`t add data</string>
     <string name="btn_insert">Insert</string>
     <string name="instruction">The highest and lowest ranking mean the top university is filtered like it goes from 1, 2, 3, .. to 600 ...</string>
+    <string name="instruction_2">Here you get universities based on you search. If you do not know where to search university or which university is good, then this nice application helps you!</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_contactus">Contact Us</string>

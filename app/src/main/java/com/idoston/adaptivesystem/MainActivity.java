@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView welcome, starter;
+    TextView welcome;
     Button btn_insert, btn_search, btn_adaptive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,29 +23,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         welcome = (TextView)findViewById(R.id.welcome);
-        starter = (TextView) findViewById(R.id.starter);
+
         btn_insert = (Button) findViewById(R.id.btn_moveInsert);
         btn_search = (Button) findViewById(R.id.btn_moveSearch);
         btn_adaptive = (Button) findViewById(R.id.btn_search);
 
+        //To enable "add up button in actionBar" 'back button'
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        welcome.setVisibility(View.INVISIBLE);
-        btn_search.setVisibility(View.INVISIBLE);
-        btn_insert.setVisibility(View.INVISIBLE);
-        btn_adaptive.setVisibility(View.INVISIBLE);
 
-        starter.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        welcome.setVisibility(View.VISIBLE);
-                        btn_insert.setVisibility(View.VISIBLE);
-                        btn_search.setVisibility(View.VISIBLE);
-                        starter.setVisibility(View.INVISIBLE);
-                        btn_adaptive.setVisibility(View.VISIBLE);
-                    }
-                }
-        );
     }
 
     public void MoveInsert(View view){
@@ -65,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_main, menu);
+        menuInflater.inflate(R.menu.activity_main_action, menu);
 
         //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -80,12 +66,25 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.id_exit_app_home) {
-
-            Exit_alert();
+        if (id == R.id.action_settings) {
+            Toast.makeText(MainActivity.this, "Sorry, there is no any option for setting!!!", Toast.LENGTH_LONG).show();
             return true;
         }
-
+        switch(id){
+            case R.id.id_about_us:
+                Toast.makeText(MainActivity.this, "I am Junior Android Developer!!!", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.id_contact_us:
+                Toast.makeText(MainActivity.this, "If you want to cantact me, please write email to doston2509@gmail.com!!!",
+                        Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.id_search:
+                Toast.makeText(MainActivity.this, "Sorry, there is no any option for search!!!", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.id_exit_app:
+                Exit_alert();
+                return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
