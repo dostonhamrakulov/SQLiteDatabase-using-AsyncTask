@@ -33,7 +33,7 @@ public class Adaptive extends AppCompatActivity {
                         intent.putExtra("Maximum", take_max_ranking.getText().toString());
                         intent.putExtra("Continent", spinner.getSelectedItem().toString());
                         startActivity(intent);
-                        Toast.makeText(Adaptive.this, "It is still in process!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Adaptive.this, "It is still in process!", Toast.LENGTH_SHORT).show();
                     }
                 }
         );

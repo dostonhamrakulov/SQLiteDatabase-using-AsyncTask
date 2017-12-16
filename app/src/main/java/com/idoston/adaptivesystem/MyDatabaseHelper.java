@@ -72,7 +72,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAdaptiveData(SQLiteDatabase sqLiteDatabase, int min, int max, String continent){
         //SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor res = sqLiteDatabase.rawQuery(" select * from " + TABLE_NAME + " as U where (U.Ranking < " + max + " AND U.Ranking >  " + min + " AND U.Continent = '" + continent + "');", null);
+        Cursor res = sqLiteDatabase.rawQuery(" select * from " + TABLE_NAME + " as U where (U.Ranking <= " + max + " AND U.Ranking =>  " + min + " AND U.Continent = '" + continent + "');", null);
         //sqLiteDatabase.query()
         //Cursor res = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
 
