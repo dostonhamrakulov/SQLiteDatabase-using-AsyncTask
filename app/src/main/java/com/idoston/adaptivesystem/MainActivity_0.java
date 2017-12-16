@@ -21,13 +21,6 @@ public class MainActivity_0 extends AppCompatActivity {
     }
     public void Start(View view){
 
-        for(int i = 0; i < 5; i++){
-            BackgroundTask backgroundTask= new BackgroundTask(this);
-            backgroundTask.execute("add_info", defaultValues.getNAME(i), defaultValues.getRANK(i),
-                    defaultValues.getFEE(i), defaultValues.getPROGRAM(i),
-                    defaultValues.getCITY(i), defaultValues.getCOUNTRY(i), defaultValues.getCONTINENT(i));
-        }
-        Toast.makeText(this, "All default values are loaded!", Toast.LENGTH_LONG).show();
         startActivity(new Intent(MainActivity_0.this, MainActivity.class));
     }
     @Override
@@ -53,6 +46,17 @@ public class MainActivity_0 extends AppCompatActivity {
 
             Exit_alert();
             return true;
+        } else if (id == R.id.id_default_values){
+            for(int i = 0; i < 5; i++){
+                BackgroundTask backgroundTask= new BackgroundTask(this);
+                backgroundTask.execute("add_info", defaultValues.getNAME(i), defaultValues.getRANK(i),
+                        defaultValues.getFEE(i), defaultValues.getPROGRAM(i),
+                        defaultValues.getCITY(i), defaultValues.getCOUNTRY(i), defaultValues.getCONTINENT(i));
+            }
+            Toast.makeText(this, "All default values are loaded!", Toast.LENGTH_LONG).show();
+        } else if (id == R.id.id_about_using){
+            Toast.makeText(MainActivity_0.this, "I am Junior Android Developer. If you want, you can reach at me by doston2509@gmail.com",
+                    Toast.LENGTH_LONG).show();
         }
 
 

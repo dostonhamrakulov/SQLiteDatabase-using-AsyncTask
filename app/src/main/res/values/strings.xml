@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Adaptive System</string>
+    <string name="app_name">AUS</string>
     <string name="insert_text">Oops, you can`t add data</string>
     <string name="btn_insert">Insert</string>
     <string name="instruction">The highest and lowest ranking mean the top university is filtered like it goes from 1, 2, 3, .. to 600 ...</string>
