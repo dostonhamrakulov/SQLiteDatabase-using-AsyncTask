@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView welcome, starter;
-    Button btn_insert, btn_search;
+    Button btn_insert, btn_search, btn_adaptive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +21,13 @@ public class MainActivity extends AppCompatActivity {
         starter = (TextView) findViewById(R.id.starter);
         btn_insert = (Button) findViewById(R.id.btn_moveInsert);
         btn_search = (Button) findViewById(R.id.btn_moveSearch);
+        btn_adaptive = (Button) findViewById(R.id.btn_search);
+
 
         welcome.setVisibility(View.INVISIBLE);
         btn_search.setVisibility(View.INVISIBLE);
         btn_insert.setVisibility(View.INVISIBLE);
+        btn_adaptive.setVisibility(View.INVISIBLE);
 
         starter.setOnClickListener(
                 new View.OnClickListener() {
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         btn_insert.setVisibility(View.VISIBLE);
                         btn_search.setVisibility(View.VISIBLE);
                         starter.setVisibility(View.INVISIBLE);
+                        btn_adaptive.setVisibility(View.VISIBLE);
                     }
                 }
         );

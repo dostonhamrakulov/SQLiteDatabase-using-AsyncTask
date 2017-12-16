@@ -51,6 +51,9 @@ public class UniversityAdapter extends ArrayAdapter {
             view = layoutInflater.inflate(R.layout.list_university, parent, false);
 
             universityHolder = new UniversityHolder();
+
+            universityHolder.empty = view.findViewById(R.id.textView0);
+
             universityHolder.id = view.findViewById(R.id.textView1);
             universityHolder.name = view.findViewById(R.id.textView2);
             universityHolder.ranking = view.findViewById(R.id.textView3);
@@ -68,20 +71,22 @@ public class UniversityAdapter extends ArrayAdapter {
         }
 
         University university = (University)getItem(position);
-        universityHolder.id.setText(university.getID());
-        universityHolder.name.setText(university.getName());
-        universityHolder.ranking.setText(university.getRanking());
-        universityHolder.fee.setText(university.getTuition());
-        universityHolder.program.setText(university.getProgram());
-        universityHolder.city.setText(university.getCity());
-        universityHolder.country.setText(university.getCountry());
-        universityHolder.continent.setText(university.getContinent());
+        universityHolder.id.setText("ID: " + university.getID());
+        universityHolder.name.setText("Name: " + university.getName());
+        universityHolder.ranking.setText("Ranking: " + university.getRanking());
+        universityHolder.fee.setText("Tuition fee: " + university.getTuition());
+        universityHolder.program.setText("Study program: " + university.getProgram());
+        universityHolder.city.setText("City: " + university.getCity());
+        universityHolder.country.setText("Country: " + university.getCountry());
+        universityHolder.continent.setText("Continent: " + university.getContinent());
+
+        universityHolder.empty.setText("---- New University -----");
 
         return view;
     }
 
     static class UniversityHolder
     {
-        TextView id, name, ranking, fee, program, city, country, continent;
+        TextView id, name, ranking, fee, program, city, country, continent, empty;
     }
 }

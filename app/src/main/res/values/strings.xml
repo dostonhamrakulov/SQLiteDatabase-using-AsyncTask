@@ -3,4 +3,14 @@
     <string name="insert_text">Oops, you can`t add data</string>
     <string name="btn_insert">Insert</string>
 
+    <array name="continents">
+        <item></item>
+        <item>Asia</item>
+        <item>Africa</item>
+        <item>Europa</item>
+        <item>North America</item>
+        <item>South America</item>
+
+    </array>
+
 </resources>

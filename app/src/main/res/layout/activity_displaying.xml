@@ -4,11 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.idoston.adaptivesystem.Displaying">
+    tools:context="com.idoston.adaptivesystem.Displaying"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/firstText"
+        android:text="The list of universities"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/firstText"
         android:id="@+id/list_view">
 
     </ListView>
