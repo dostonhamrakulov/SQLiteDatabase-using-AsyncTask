@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView welcome;
     Button btn_insert, btn_search, btn_adaptive;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         //To enable "add up button in actionBar" 'back button'
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        DefaultUniversities();
 
 
     }
@@ -128,5 +131,10 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = alert_builder.create();
         alert.setTitle("Information");
         alert.show();
+    }
+    public void DefaultUniversities(){
+
+
+
     }
 }

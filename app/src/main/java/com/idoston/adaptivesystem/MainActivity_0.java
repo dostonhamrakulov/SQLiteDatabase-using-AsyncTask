@@ -13,12 +13,21 @@ import android.widget.Toast;
 
 public class MainActivity_0 extends AppCompatActivity {
 
+    DefaultValues defaultValues = new DefaultValues();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_0);
     }
     public void Start(View view){
+
+        for(int i = 0; i < 5; i++){
+            BackgroundTask backgroundTask= new BackgroundTask(this);
+            backgroundTask.execute("add_info", defaultValues.getNAME(i), defaultValues.getRANK(i),
+                    defaultValues.getFEE(i), defaultValues.getPROGRAM(i),
+                    defaultValues.getCITY(i), defaultValues.getCOUNTRY(i), defaultValues.getCONTINENT(i));
+        }
+        Toast.makeText(this, "All default values are loaded!", Toast.LENGTH_LONG).show();
         startActivity(new Intent(MainActivity_0.this, MainActivity.class));
     }
     @Override
