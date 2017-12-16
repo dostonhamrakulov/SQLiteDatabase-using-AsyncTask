@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this, "Moving to Adaptive system!!", Toast.LENGTH_SHORT).show();
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -110,6 +111,22 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog alert = alert_builder.create();
         alert.setTitle("Alert!!!");
+        alert.show();
+    }
+
+    public void getInstruction(View view){
+        AlertDialog.Builder alert_builder = new AlertDialog.Builder(this);
+        alert_builder.setMessage(R.string.instruction_2)
+                .setCancelable(false)
+                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+        AlertDialog alert = alert_builder.create();
+        alert.setTitle("Information");
         alert.show();
     }
 }
