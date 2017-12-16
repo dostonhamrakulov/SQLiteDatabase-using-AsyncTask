@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Inserting" />
         <activity android:name=".Displaying" />
-        <activity android:name=".Adaptive"></activity>
+        <activity android:name=".Adaptive" />
+        <activity android:name=".Adaptive_display"></activity>
     </application>
 
 </manifest>

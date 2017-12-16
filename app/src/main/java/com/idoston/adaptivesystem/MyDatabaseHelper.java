@@ -24,7 +24,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_QUERY = "create table " + TABLE_NAME + " (" +
             COL_1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COL_2 + " TEXT, " +
-            COL_3 + " TEXT, " +
+            COL_3 + " INTEGER, " +
             COL_4 + " TEXT, " +
             COL_5 + " TEXT, " +
             COL_6 + " TEXT, " +
@@ -47,7 +47,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void insertData(String name, String ranking, String tuition_fee, String program, String city, String country, String continent){
+    public void insertData(String name, int ranking, String tuition_fee, String program, String city, String country, String continent){
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -70,9 +70,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor getAllData(){
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor res = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
+    public Cursor getAdaptiveData(SQLiteDatabase sqLiteDatabase, int min, int max, String continent){
+        //SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery(" select * from " + TABLE_NAME + " as U where (U.Ranking < " + max + " AND U.Ranking >  " + min + " AND U.Continent = '" + continent + "');", null);
+        //sqLiteDatabase.query()
+        //Cursor res = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
 
         return res;
     }

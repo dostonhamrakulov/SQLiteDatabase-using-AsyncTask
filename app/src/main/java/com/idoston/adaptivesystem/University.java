@@ -6,9 +6,10 @@ package com.idoston.adaptivesystem;
 
 public class University {
 
-    private String ID, name, ranking, tuition, program, city, country, continent;
+    private String ID, name, tuition, program, city, country, continent;
+    private int ranking;
 
-    public University(String ID, String name, String ranking, String tuition, String program, String city, String country, String continent) {
+    public University(String ID, String name, int ranking, String tuition, String program, String city, String country, String continent) {
         this.ID = ID;
         this.name = name;
         this.ranking = ranking;
@@ -35,11 +36,11 @@ public class University {
         this.name = name;
     }
 
-    public String getRanking() {
+    public int getRanking() {
         return ranking;
     }
 
-    public void setRanking(String ranking) {
+    public void setRanking(int ranking) {
         this.ranking = ranking;
     }
 

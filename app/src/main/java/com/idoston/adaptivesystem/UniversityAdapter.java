@@ -80,7 +80,7 @@ public class UniversityAdapter extends ArrayAdapter {
         universityHolder.country.setText("Country: " + university.getCountry());
         universityHolder.continent.setText("Continent: " + university.getContinent());
 
-        universityHolder.empty.setText("---- New University -----");
+        universityHolder.empty.setText("---- University -----");
 
         return view;
     }
