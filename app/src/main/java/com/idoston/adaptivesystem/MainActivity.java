@@ -1,6 +1,8 @@
 package com.idoston.adaptivesystem;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -79,12 +81,36 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.id_exit_app_home) {
-            Toast.makeText(MainActivity.this, "Good bye!!!", Toast.LENGTH_SHORT).show();
-            finish();
+
+            Exit_alert();
             return true;
         }
 
 
         return super.onOptionsItemSelected(item);
+    }
+    public void Exit_alert(){
+        AlertDialog.Builder alert_builder = new AlertDialog.Builder(this);
+        alert_builder.setMessage("Do you want to close this app?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Good bye!!!", Toast.LENGTH_SHORT).show();
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+        AlertDialog alert = alert_builder.create();
+        alert.setTitle("Alert!!!");
+        alert.show();
     }
 }

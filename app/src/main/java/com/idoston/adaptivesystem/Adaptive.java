@@ -1,7 +1,9 @@
 package com.idoston.adaptivesystem;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,12 +44,12 @@ public class Adaptive extends AppCompatActivity {
                 }
         );
 
-        //To add icon to actionBar
-
-        ActionBar myActionBar = getSupportActionBar();
-        myActionBar.setDisplayUseLogoEnabled(true);
-        myActionBar.setDisplayShowHomeEnabled(true);
-        myActionBar.setLogo(R.drawable.ic_phone_android_black_24dp);
+//        //To add icon to actionBar
+//
+//        ActionBar myActionBar = getSupportActionBar();
+//        myActionBar.setDisplayUseLogoEnabled(true);
+//        myActionBar.setDisplayShowHomeEnabled(true);
+//        myActionBar.setLogo(R.drawable.ic_phone_android_black_24dp);
 
         //To enable "add up button in actionBar" 'back button'
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -88,12 +90,35 @@ public class Adaptive extends AppCompatActivity {
                 Toast.makeText(Adaptive.this, "Sorry, there is no any option for search!!!", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.id_exit_app:
-                finish();
-                System.exit(0);
+                Exit_alert();
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void Exit_alert(){
+        AlertDialog.Builder alert_builder = new AlertDialog.Builder(this);
+        alert_builder.setMessage("Do you want to close this app?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(Adaptive.this, "Good bye!!!", Toast.LENGTH_SHORT).show();
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+        AlertDialog alert = alert_builder.create();
+        alert.setTitle("Alert!!!");
+        alert.show();
     }
 
 }
