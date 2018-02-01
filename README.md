@@ -1,14 +1,10 @@
 # Doston Hamrakulov
 
-## Connect4 with Artificial Intelligence
-Example of MinMax Algorithm to implement a game.
+## Adaptive Systems
+###Application domain  
+My application aims to provide a solution to students looking for a university with specific criteria. Students often find themselves confused because of the amount of information that come up when they try to look for a university. This application makes that task easier because you choose the criteria which will filter the results. The criteria available are the university’s continent, its ranking but als o the tuition fees
 
-The project was developed through NetBeans IDE.
 
-## Game mode
-In this application, the user plays against the computer through the console indicating the turn of the players.
-
-The game finishes when one of the players made a 4-row, 4-column or 4-diagonal. Enjoy it !
 
 ### Programming language
 ```[java]
@@ -16,8 +12,8 @@ The game finishes when one of the players made a 4-row, 4-column or 4-diagonal. 
 ```
 
 ### IDE
-```[eclipse]
-// Eclipse
+```[androidstudio]
+// Android Studio
 ```
 
 ## Author
@@ -27,19 +23,7 @@ The game finishes when one of the players made a 4-row, 4-column or 4-diagonal. 
 
 ### Screens:
 
-First, Player need to make movement:
-<p align="center"><img width="50%" height="50%" src="https://github.com/dostonhamrakulov/Connect-4-Artificial-Intelligence-In-Java/blob/master/Images/images_1.PNG" /></p>
 
-Here, you can see computer has made a movement:
-<p align="center"><img width="50%" height="50%" src="https://github.com/dostonhamrakulov/Connect-4-Artificial-Intelligence-In-Java/blob/master/Images/images_2.PNG" /></p>
-
-As soon as player makes movement computer will do its own movement also, it will be to pretent pplayer from winnning or choose optimal (the best) movement to win:
-<p align="center"><img width="50%" height="50%" src="https://github.com/dostonhamrakulov/Connect-4-Artificial-Intelligence-In-Java/blob/master/Images/images_3.PNG" /></p>
-
-As soon as player makes movement computer will do its own movement also, it will be to pretent pplayer from winnning or choose optimal (the best) movement to win:
-<p align="center"><img width="50%" height="50%" src="https://github.com/dostonhamrakulov/Connect-4-Artificial-Intelligence-In-Java/blob/master/Images/images_4.PNG" /></p>
-
-Here, computer has made final movement and won the game:
-<p align="center"><img width="50%" height="50%" src="https://github.com/dostonhamrakulov/Connect-4-Artificial-Intelligence-In-Java/blob/master/Images/images_5.PNG" /></p>
+<p align="center"><img width="50%" height="50%" src="" /></p>
 
 ### Enjoy :)
